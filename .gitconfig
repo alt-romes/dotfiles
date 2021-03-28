@@ -1,0 +1,36 @@
+[user]
+	name = romes
+	email = rodrigo.m.mesquita@gmail.com
+[push]
+	default = current
+[pull]
+	default = origin
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+	graph = true
+[alias]
+    
+    denselog = dlog
+
+    visuallog = vlog
+
+
+    # Dark theme
+    ## One line dense graph log
+    dlog = log --graph --abbrev-commit --decorate --all --format=format:'%C(blue)%h%C(reset) - %C(green)%ar%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+
+    ## Clean graph log
+    vlog = log --graph --decorate --format=format:'%C(blue)%H%C(reset) - %C(green)%ar%C(reset) %C(auto)%d%C(reset)%n%n        %C(white)%s%C(reset)%n        %C(dim white)~ %an <%ae>%C(reset)%n' --all
+
+
+    # White theme
+    ## One line dense graph log for white theme
+    wdlog = log --graph --abbrev-commit --decorate --all --format=format:'%C(blue)%h%C(reset) - %C(green)%ar%C(reset) - %C(black)%s%C(reset) %C(dim black)- %an%C(reset)%C(auto)%d%C(reset)' --all
+
+    ## Clean graph log for white theme
+    wvlog = log --graph --decorate --format=format:'%C(blue)%H%C(reset) - %C(green)%ar%C(reset) %C(auto)%d%C(reset)%n%n        %C(black)%s%C(reset)%n        %C(dim black)~ %an <%ae>%C(reset)%n' --all
