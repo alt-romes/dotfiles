@@ -89,6 +89,12 @@ set re=0
 "==========================================
 "|               Plugins                  |
 "==========================================
+"
+" Adding plugins:
+"   cd ~/.vim/pack/romes/start
+"   config submodule add https://github.com/pluginowner/plugin
+" Updating plugins:
+"   config submodule update
 
 """ vim-snipmate : enable version 1 parser
 let g:snipMate = { 'snippet_version' : 1 }
