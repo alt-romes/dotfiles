@@ -25,3 +25,6 @@
 [submodule ".vim/pack/romes/start/java-syntax.vim"]
 	path = .vim/pack/romes/start/java-syntax.vim
 	url = https://github.com/uiiaoo/java-syntax.vim
+[submodule ".vim/pack/romes/start/tagbar"]
+	path = .vim/pack/romes/start/tagbar
+	url = https://github.com/preservim/tagbar
