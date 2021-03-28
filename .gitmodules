@@ -22,3 +22,6 @@
 [submodule ".vim/pack/romes/start/auto-pairs"]
 	path = .vim/pack/romes/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule ".vim/pack/romes/start/java-syntax.vim"]
+	path = .vim/pack/romes/start/java-syntax.vim
+	url = https://github.com/uiiaoo/java-syntax.vim
