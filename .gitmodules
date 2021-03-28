@@ -28,3 +28,9 @@
 [submodule ".vim/pack/romes/start/tagbar"]
 	path = .vim/pack/romes/start/tagbar
 	url = https://github.com/preservim/tagbar
+[submodule ".vim/pack/romes/start/vim-anyfold"]
+	path = .vim/pack/romes/start/vim-anyfold
+	url = https://github.com/pseewald/vim-anyfold
+[submodule ".vim/pack/romes/start/vim-fold-cycle"]
+	path = .vim/pack/romes/start/vim-fold-cycle
+	url = https://github.com/arecarn/vim-fold-cycle
