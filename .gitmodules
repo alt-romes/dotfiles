@@ -4,3 +4,6 @@
 [submodule ".vim/pack/romes/start/vim-polyglot"]
 	path = .vim/pack/romes/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/romes/start/lightline.vim"]
+	path = .vim/pack/romes/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
