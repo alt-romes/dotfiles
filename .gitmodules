@@ -40,3 +40,6 @@
 [submodule ".vim/pack/romes/start/vim-commentary"]
 	path = .vim/pack/romes/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule ".vim/pack/romes/start/vim-jsdoc"]
+	path = .vim/pack/romes/start/vim-jsdoc
+	url = https://github.com/heavenshell/vim-jsdoc
