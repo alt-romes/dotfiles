@@ -75,6 +75,10 @@ filetype on
 
 " enable plugins for specific filetypes | required by: cvim
 filetype plugin on
+" enable autocomplete with syntax (usage: <C-X><C-O>)
+set omnifunc=syntaxcomplete#Complete
+" use Ctrl + j for omnicomplete
+imap <C-j> <C-X><C-O>
 
 " create command to print sentence from languages/sentences.db
 map <silent> <leader>s :echom system("sentences -o -n")<CR>
