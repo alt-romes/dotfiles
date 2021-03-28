@@ -43,3 +43,6 @@
 [submodule ".vim/pack/romes/start/vim-jsdoc"]
 	path = .vim/pack/romes/start/vim-jsdoc
 	url = https://github.com/heavenshell/vim-jsdoc
+[submodule ".vim/pack/romes/start/ale"]
+	path = .vim/pack/romes/start/ale
+	url = https://github.com/dense-analysis/ale
