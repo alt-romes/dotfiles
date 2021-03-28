@@ -1,0 +1,3 @@
+[submodule ".vim/pack/romes/start/nerdtree"]
+	path = .vim/pack/romes/start/nerdtree
+	url = https://github.com/preservim/nerdtree
