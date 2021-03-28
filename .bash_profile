@@ -96,4 +96,7 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 #   | Dotfiles                           |
 #   +-----------------------------------*/
 
+# Initialize a repository first as:
+# git init --bare $HOME/.myconf
+# config config status.showUntrackedFiles no
 alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=$HOME'
