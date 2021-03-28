@@ -90,6 +90,9 @@ set re=0
 "|               Plugins                  |
 "==========================================
 
+""" vim-snipmate : enable version 1 parser
+let g:snipMate = { 'snippet_version' : 1 }
+
 """ vim-commentary : creates comments with 'gc'
 
 
