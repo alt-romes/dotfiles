@@ -1,3 +1,6 @@
 [submodule ".vim/pack/romes/start/nerdtree"]
 	path = .vim/pack/romes/start/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule ".vim/pack/romes/start/vim-polyglot"]
+	path = .vim/pack/romes/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
