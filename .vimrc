@@ -103,10 +103,12 @@ set re=0
 
 """ Ale: LSP integration:
 
-" Toggle ALE 
-let g:ale_enabled = 1
+" Toggle ALE - start disabled by default, use \a (leader+a)
+let g:ale_enabled = 0
+nmap <silent> <leader>a :ALEToggle<CR>
 
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1 # don't enable completion, just show it
+" when omnifunc is pressed (ctrl+j or ctrl+x>ctrl+o)
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1 " automatic import from external modules
 
@@ -121,11 +123,12 @@ let g:ale_lint_on_enter = 0
 " disable background color on the sign column
 let g:ale_change_sign_column_color = 1
 
+" does nothing??
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
-" Create shortcut to run ALEHover
-nmap <silent> <leader>h :ALEHover<CR>
+" Create shortcut to run ALEHover (ctrl+k)
+nmap <silent> <C-K> :ALEHover<CR>
 
 " configure messages
 let g:ale_echo_msg_error_str = 'E'
