@@ -26,7 +26,7 @@ let g:afterglow_inherit_background=1
 let g:gruvbox_italic = 1
 
 " choose random colorscheme
-let ltime = 2 "localtime()
+let ltime = 9 "localtime()
 let colorschemes = ['xcodedark', 'xcodelighthc', 'gruvbox', 'nord', 'miramare', 'afterglow', 'PaperColor', 'tokyonight', 'rigel', 'forest-night']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'nord', 'miramare', 'deus', 'default', 'tokyonight', 'rigel', 'forest_night']
 " set lightline bar color (use it on the #plugin section)
@@ -76,7 +76,7 @@ filetype on
 " enable plugins for specific filetypes | required by: cvim
 filetype plugin on
 " enable autocomplete with syntax (usage: <C-X><C-O>)
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete " use Ale completion below...
 " use Ctrl + j for omnicomplete
 imap <C-j> <C-X><C-O>
 
@@ -99,6 +99,39 @@ set re=0
 "   config submodule add https://github.com/pluginowner/plugin
 " Updating plugins:
 "   config submodule update
+
+
+""" Ale: LSP integration:
+
+" Toggle ALE 
+let g:ale_enabled = 1
+
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 1 " automatic import from external modules
+
+" show suggestions
+let g:ale_lsp_suggestions = 1
+
+" slow down automatic linting
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0 
+
+" disable background color on the sign column
+let g:ale_change_sign_column_color = 1
+
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+" Create shortcut to run ALEHover
+nmap <silent> <leader>h :ALEHover<CR>
+
+" configure messages
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%severity%] %s'
+
 
 """ vim-snipmate : enable version 1 parser
 let g:snipMate = { 'snippet_version' : 1 }
