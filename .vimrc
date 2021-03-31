@@ -26,9 +26,9 @@ let g:afterglow_inherit_background=1
 let g:gruvbox_italic = 1
 
 " choose random colorscheme
-let ltime = 9 "localtime()
-let colorschemes = ['xcodedark', 'xcodelighthc', 'gruvbox', 'nord', 'miramare', 'afterglow', 'PaperColor', 'tokyonight', 'rigel', 'forest-night']
-let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'nord', 'miramare', 'deus', 'default', 'tokyonight', 'rigel', 'forest_night']
+let ltime = 3 "localtime()
+let colorschemes = ['xcodedark', 'xcodelighthc', 'gruvbox', 'spacecamp', 'nord', 'miramare', 'afterglow', 'PaperColor', 'tokyonight', 'rigel', 'forest-night', 'falcon']
+let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'default', 'nord', 'miramare', 'deus', 'default', 'tokyonight', 'rigel', 'forest_night', 'falcon']
 " set lightline bar color (use it on the #plugin section)
 let lightlinecolortheme = linecolors[ltime % (len(linecolors)) ]
 " set colorscheme
@@ -75,16 +75,17 @@ filetype on
 
 " enable plugins for specific filetypes | required by: cvim
 filetype plugin on
+
 " enable autocomplete with syntax (usage: <C-X><C-O>)
 " set omnifunc=syntaxcomplete#Complete " use Ale completion below...
-" use Ctrl + j for omnicomplete
-imap <C-j> <C-X><C-O>
+" use Ctrl + j for omnicomplete " disabled, use <C-X><C-O>
+" imap <C-j> <C-X><C-O>
 
 " create command to print sentence from languages/sentences.db
 map <silent> <leader>s :echom system("sentences -o -n")<CR>
 
 " create command to switch .asm syntax to rgbasm
-map <silent> <leader>a :set syntax=rgbasm<CR>
+map <silent> <leader>s :set syntax=rgbasm<CR>
 
 " fix vim polyglot groovy file editing (what does it really do to regex?)
 set re=0
@@ -107,6 +108,9 @@ set re=0
 let g:ale_enabled = 0
 nmap <silent> <leader>a :ALEToggle<CR>
 
+" Show error/warning detail with leader+h
+nmap <silent> <leader>h :ALEDetail<CR>
+
 " let g:ale_completion_enabled = 1 # don't enable completion, just show it
 " when omnifunc is pressed (ctrl+j or ctrl+x>ctrl+o)
 set omnifunc=ale#completion#OmniFunc
@@ -121,14 +125,13 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0 
 
 " disable background color on the sign column
-let g:ale_change_sign_column_color = 1
+let g:ale_change_sign_column_color = 0
 
 " does nothing??
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
+" let g:ale_set_highlights = 0
 
-" Create shortcut to run ALEHover (ctrl+k)
-nmap <silent> <C-K> :ALEHover<CR>
+" Create shortcut to run ALEHover (ctrl+k) and switch panes to it
+nmap <silent> <C-K> :ALEHover<CR><C-W>k
 
 " configure messages
 let g:ale_echo_msg_error_str = 'E'
