@@ -18,17 +18,12 @@ syntax on
 set termguicolors     " enable true colors support
 
 " settings for schemes
-" let g:tokyonight_disable_italic_comment = 1
-" let g:afterglow_use_italics=0
-let g:afterglow_inherit_background=1
-" let g:miramare_disable_italic_comment=1
-" let g:forest_night_disable_italic_comment = 1
 let g:gruvbox_italic = 1
 
 " choose random colorscheme
 let ltime = 3 "localtime()
-let colorschemes = ['xcodedark', 'xcodelighthc', 'gruvbox', 'spacecamp', 'nord', 'miramare', 'afterglow', 'PaperColor', 'tokyonight', 'rigel', 'forest-night', 'falcon']
-let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'default', 'nord', 'miramare', 'deus', 'default', 'tokyonight', 'rigel', 'forest_night', 'falcon']
+let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'spacecamp', 'srcery', 'nord', 'falcon', 'default']
+let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'default', 'srcery', 'nord', 'falcon', 'default']
 " set lightline bar color (use it on the #plugin section)
 let lightlinecolortheme = linecolors[ltime % (len(linecolors)) ]
 " set colorscheme
@@ -52,6 +47,9 @@ set sw:4 ts:4 expandtab
 
 " numbered lines
 set nu
+
+" set no wrap so lines overflow border of screen
+set nowrap
 
 " search ignore case
 set ignorecase
@@ -136,7 +134,7 @@ nmap <silent> <C-K> :ALEHover<CR><C-W>k
 " configure messages
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%severity%] %s'
+let g:ale_echo_msg_format = '[%severity%] %s : %linter%'
 
 
 """ vim-snipmate : enable version 1 parser
