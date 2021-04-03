@@ -19,6 +19,8 @@ set termguicolors     " enable true colors support
 
 " settings for schemes
 let g:gruvbox_italic = 1
+" enable dracula from opt plugin
+packadd! dracula
 
 " choose random colorscheme
 let ltime = 3 "localtime()

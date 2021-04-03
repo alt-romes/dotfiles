@@ -46,6 +46,6 @@
 [submodule ".vim/pack/romes/start/ale"]
 	path = .vim/pack/romes/start/ale
 	url = https://github.com/dense-analysis/ale
-[submodule ".vim/pack/themes/start/dracula"]
-	path = .vim/pack/themes/start/dracula
+[submodule ".vim/pack/themes/opt/dracula"]
+	path = .vim/pack/themes/opt/dracula
 	url = https://github.com/dracula/vim
