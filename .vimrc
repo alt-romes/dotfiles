@@ -19,13 +19,17 @@ set termguicolors     " enable true colors support
 
 " settings for schemes
 let g:gruvbox_italic = 1
-" enable dracula from opt plugin
+let g:embark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
+" enable themes
 packadd! dracula
+packadd! embark
+packadd! onedark
 
 " choose random colorscheme
-let ltime = 3 "localtime()
-let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'spacecamp', 'srcery', 'nord', 'falcon', 'default']
-let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'default', 'srcery', 'nord', 'falcon', 'default']
+let ltime = 5 "localtime()
+let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'falcon', 'default']
+let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'falcon', 'default']
 " set lightline bar color (use it on the #plugin section)
 let lightlinecolortheme = linecolors[ltime % (len(linecolors)) ]
 " set colorscheme
@@ -137,6 +141,7 @@ nmap <silent> <C-K> :ALEHover<CR><C-W>k
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%severity%] %s : %linter%'
+
 
 
 """ vim-snipmate : enable version 1 parser

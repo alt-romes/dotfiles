@@ -2,7 +2,6 @@ alias git='LANG=en_GB git'
 alias mv='mv -i'
 
 alias publishromes='npm run build; cd alt-romes.github.io; git init; git add .; git commit -m "update build"; git push -f https://github.com/alt-romes/alt-romes.github.io.git; cd ..'
-alias deleteclassfiles="find . -name '*.class' -delete"
 alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
 alias love='/Applications/love.app/Contents/MacOS/love'
 
@@ -12,7 +11,6 @@ alias whatismyip='curl ifconfig.me;echo '
 alias weather='curl wttr.in'
 
 alias dunnet='emacs -batch -l dunnet'
-alias cataclysm='/Applications/Cataclysm.app/Contents/MacOS/Cataclysm.sh'
 
 alias deutsch="sentences -o -c -t deutsch"
 alias japanese="sentences -o -c -t japanese"
@@ -25,8 +23,6 @@ alias emulicious='java -jar /Applications/Emulicious/Emulicious.jar'
 
 # Default termdown font
 alias termdown='termdown -f standard'
-
-alias yabai='brew services start yabai'
 
 # don't put duplicates in history
 HISTCONTROL=ignoredups
@@ -72,8 +68,8 @@ export PS1="\[\033[01;32m\][\[\033[01;37m\]\W\[\033[01;32m\]] λ\[\033[00m\] " #
 # default editor is vim
 export EDITOR="vim"
 
-# default browser for ddgr is w3m
-export BROWSER=w3m
+# default browser is lynx (used by ddgr) 
+export BROWSER=lynx
 
 # Make sure bashrc is run as well
 # [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
@@ -81,6 +77,8 @@ export BROWSER=w3m
 
 # when u fuck up, execute previous command as root
 alias fuck='sudo $(history -p \!\!)'
+
+dockercleanall='docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)'
 
 # ----
 

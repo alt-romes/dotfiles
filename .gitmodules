@@ -49,3 +49,9 @@
 [submodule ".vim/pack/themes/opt/dracula"]
 	path = .vim/pack/themes/opt/dracula
 	url = https://github.com/dracula/vim
+[submodule ".vim/pack/themes/opt/embark"]
+	path = .vim/pack/themes/opt/embark
+	url = https://github.com/embark-theme/vim
+[submodule ".vim/pack/themes/opt/onedark"]
+	path = .vim/pack/themes/opt/onedark
+	url = https://github.com/joshdick/onedark.vim
