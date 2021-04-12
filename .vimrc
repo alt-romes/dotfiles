@@ -27,9 +27,9 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 5 "localtime()
-let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'falcon', 'default']
-let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'falcon', 'default']
+let ltime = 4 "localtime()
+let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
+let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)
 let lightlinecolortheme = linecolors[ltime % (len(linecolors)) ]
 " set colorscheme
@@ -192,7 +192,7 @@ let blacklist = []
 autocmd Filetype * if index(blacklist, &ft) < 0 | AnyFoldActivate               
 
 " start with all folds open
-set foldlevel=6
+set foldlevel=7
 
 
 """ vim-snipmate | dependencies: tlib_vim, vim-addon-mw-utils, vim-snippets
