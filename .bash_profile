@@ -1,5 +1,4 @@
 alias git='LANG=en_GB git'
-alias mv='mv -i'
 
 alias publishromes='npm run build; cd alt-romes.github.io; git init; git add .; git commit -m "update build"; git push -f https://github.com/alt-romes/alt-romes.github.io.git; cd ..'
 alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
@@ -24,9 +23,6 @@ alias emulicious='java -jar /Applications/Emulicious/Emulicious.jar'
 # Default termdown font
 alias termdown='termdown -f standard'
 
-# don't put duplicates in history
-HISTCONTROL=ignoredups
-
 # Nativescript-Vue Environment
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home
 nankicards="$()"
@@ -43,7 +39,6 @@ export PATH="$HOME/control:$PATH"
 
 
 # Start countdown and when done log time into time log
-
 # Termdown with logging to log file
 tasktimer(){
     if [ "$1" == "" ] || [ "$2" == "" ]; then
@@ -65,9 +60,6 @@ randomcolor=${colors[index]}
 # export PS1="${randomcolor}\W \u\$ \[\033[0m\]"
 export PS1="\[\033[01;32m\][\[\033[01;37m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
 
-# default editor is vim
-export EDITOR="vim"
-
 # default browser is lynx (used by ddgr) 
 export BROWSER=lynx
 
@@ -78,20 +70,42 @@ export BROWSER=lynx
 # when u fuck up, execute previous command as root
 alias fuck='sudo $(history -p \!\!)'
 
-dockercleanall='docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)'
 
-# ----
+# ---- clean up
+
+
+
+#   +----oOO-{%}-OOo---------------------+
+#   - Base config                        -
+#   +-----------------------------------*/
+
+# don't overwrite by default when moving
+alias mv='mv -i'
+
+# don't put duplicates in history
+HISTCONTROL=ignoredups
+
+# default editor is vim
+export EDITOR="vim"
+
+
+
+#   +----oOO-{&}-OOo---------------------+
+#   - Extras with dependencies in       -
+#   - control/docs/dependencies.sh      -
+#   +-----------------------------------*/
 
 # override ls with exa
 alias ls='exa'
-
-# overkill ls
 alias ll='exa --git --tree --level=2 -la --header --group'
 
-#           _\|/_
-#           (o o)
-#   +----oOO-{_}-OOo---------------------+
-#   | Dotfiles                           |
+# always use translate-shell in interactive mode
+alias trans='trans -I'
+
+
+
+#   +----oOO-{/}-OOo---------------------+
+#   - Dotfiles                           -
 #   +-----------------------------------*/
 
 # Initialize a repository first as:
