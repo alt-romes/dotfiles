@@ -27,7 +27,7 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 4 "localtime()
+let ltime = 2 "localtime()
 let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)
@@ -36,7 +36,7 @@ let lightlinecolortheme = linecolors[ltime % (len(linecolors)) ]
 execute 'colorscheme' colorschemes[ltime % (len(colorschemes)) ]
 
 " Set vim background transparent
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 "==========================================
 "|            Customization               |
