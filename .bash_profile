@@ -58,7 +58,7 @@ randomcolor=${colors[index]}
 
 # Choose random color from prompt and costumize it
 # export PS1="${randomcolor}\W \u\$ \[\033[0m\]"
-export PS1="\[\033[01;32m\][\[\033[01;37m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
+export PS1="\[\033[01;32m\][\[\033[0m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
 
 # default browser is lynx (used by ddgr) 
 export BROWSER=lynx
