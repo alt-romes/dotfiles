@@ -85,8 +85,14 @@ alias mv='mv -i'
 # don't put duplicates in history
 HISTCONTROL=ignoredups
 
+# ext4nd cd path
+export CDPATH="$HOME:."
+# don't print directory changed to
+alias cd="> /dev/null cd"
+
 # default editor is vim
 export EDITOR="vim"
+
 
 
 
