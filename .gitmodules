@@ -55,6 +55,3 @@
 [submodule ".vim/pack/themes/opt/onedark"]
 	path = .vim/pack/themes/opt/onedark
 	url = https://github.com/joshdick/onedark.vim
-[submodule ".vim/pack/romes/opt/vim-latex"]
-	path = .vim/pack/romes/opt/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git

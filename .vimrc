@@ -27,7 +27,7 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 4 "localtime()
+let ltime = 3 "localtime()
 let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'Tomorrow', 'Tomorrow-Night', 'Tomorrow-Night-Eighties', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'ayu_light', 'darcula', 'darcula', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)
@@ -102,6 +102,10 @@ map <silent> <leader>s :set syntax=rgbasm<CR>
 " fix vim polyglot groovy file editing (what does it really do to regex?)
 set re=0
 
+" enable menus
+source $VIMRUNTIME/menu.vim
+set wildmenu    " :h wildmenu
+set cpo-=<      " compatability option which i don't really understand
 
 "==========================================
 "|               Plugins                  |
@@ -267,7 +271,5 @@ nnoremap <leader>g :Goyo<cr>
 "==========================================
 "    (start them with :packadd plugin)
 
-
-""" vim-surround to edit html faaaster
-
-""" c-support (cvim)
+" recognize .tex as latex
+let g:tex_flavor='latex'
