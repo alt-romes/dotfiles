@@ -118,3 +118,5 @@ alias trans='trans -I'
 # git init --bare $HOME/.myconf
 # config config status.showUntrackedFiles no
 alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=$HOME'
+# Pull remote submodule changes with
+# config submodule update --remote
