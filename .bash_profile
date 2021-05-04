@@ -28,6 +28,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home
 nankicards="$()"
 export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+# Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 # Haskell Stack builds uses this directory
@@ -66,7 +68,6 @@ export BROWSER=lynx
 # Make sure bashrc is run as well
 # [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
 
-
 # when u fuck up, execute previous command as root
 alias fuck='sudo $(history -p \!\!)'
 
@@ -84,11 +85,6 @@ alias mv='mv -i'
 
 # don't put duplicates in history
 HISTCONTROL=ignoredups
-
-# ext4nd cd path
-export CDPATH="$HOME:."
-# don't print directory changed to
-alias cd="> /dev/null cd"
 
 # default editor is vim
 export EDITOR="vim"

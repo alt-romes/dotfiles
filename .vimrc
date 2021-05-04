@@ -27,7 +27,7 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 3 "localtime()
+let ltime = 1 "localtime()
 let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'Tomorrow', 'Tomorrow-Night', 'Tomorrow-Night-Eighties', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'ayu_light', 'darcula', 'darcula', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)
@@ -71,7 +71,11 @@ set ignorecase
 " right bottom see cursor position
 set ruler
 
-" highlight search set hlsearch "don't forget to use :noh in between search
+" " highlight search results
+" set hlsearch
+
+" " remove highlight from search with leader+space
+" nnoremap <nowait><silent> <leader><ESC> :noh<CR>
 
 " allow mouse scrolling 
 set mouse=a
@@ -97,7 +101,7 @@ filetype plugin on
 map <silent> <leader>s :echom system("sentences -o -n")<CR>
 
 " create command to switch .asm syntax to rgbasm
-map <silent> <leader>s :set syntax=rgbasm<CR>
+" map <silent> <leader>s :set syntax=rgbasm<CR>
 
 " fix vim polyglot groovy file editing (what does it really do to regex?)
 set re=0

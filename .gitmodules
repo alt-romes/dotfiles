@@ -55,3 +55,6 @@
 [submodule ".vim/pack/themes/opt/onedark"]
 	path = .vim/pack/themes/opt/onedark
 	url = https://github.com/joshdick/onedark.vim
+[submodule ".vim/pack/romes/opt/vim-grammarous"]
+	path = .vim/pack/romes/opt/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous.git
