@@ -89,7 +89,12 @@ HISTCONTROL=ignoredups
 # default editor is vim
 export EDITOR="vim"
 
+#   +----oOO-{&}-OOo---------------------+
+#   - Commands / Functions / Aliases    -
+#   +-----------------------------------*/
 
+alias marco="pushd ."
+alias polo="popd"
 
 
 #   +----oOO-{&}-OOo---------------------+

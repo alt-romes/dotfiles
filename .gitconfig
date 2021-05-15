@@ -34,3 +34,5 @@
 
     ## Clean graph log for white theme
     wvlog = log --graph --decorate --format=format:'%C(blue)%H%C(reset) - %C(green)%ar%C(reset) %C(auto)%d%C(reset)%n%n        %C(black)%s%C(reset)%n        %C(dim black)~ %an <%ae>%C(reset)%n' --all
+[core]
+	excludesfile = /Users/romes/.gitignore_global
