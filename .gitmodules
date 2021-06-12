@@ -58,3 +58,6 @@
 [submodule ".vim/pack/romes/opt/vim-grammarous"]
 	path = .vim/pack/romes/opt/vim-grammarous
 	url = https://github.com/rhysd/vim-grammarous.git
+[submodule ".vim/pack/romes/opt/vim-hoogle"]
+	path = .vim/pack/romes/opt/vim-hoogle
+	url = https://github.com/Twinside/vim-hoogle.git

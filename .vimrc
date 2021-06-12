@@ -27,7 +27,7 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 8 "localtime()
+let ltime = 3 "localtime()
 let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'Tomorrow', 'Tomorrow-Night', 'Tomorrow-Night-Eighties', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'ayu_light', 'darcula', 'darcula', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)
@@ -45,9 +45,6 @@ execute 'colorscheme' colorschemes[ltime % (len(colorschemes)) ]
 
 " Make background transparent
 command RTransparentBackground hi Normal guibg=NONE ctermbg=NONE
-
-" Load grammarous plugin for grammar checking (:GrammarousCheck)
-command RLoadGrammarous packadd vim-grammarous
 
 
 "==========================================
@@ -161,14 +158,6 @@ nmap <silent> <C-K> :ALEHover<CR><C-W>k
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%severity%] %s : %linter%'
-
-" haskell specific not working in ftplugin
-" hack for ghc to detect cabal packages
-" let g:ale_haskell_ghc_options = '-fno-code -v0 -package-db /Users/romes/.cabal/store/ghc-8.10.4/package.db'
-" disable ghc integration
-let g:ale_linters = {
-\    'haskell': ['cabal_ghc', 'ghc_mod', 'hdevtools', 'hie', 'hlint', 'hls', 'stack_build', 'stack_ghc']
-\}
 
 
 """ vim-snipmate : enable version 1 parser

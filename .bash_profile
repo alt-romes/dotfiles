@@ -93,6 +93,10 @@ export EDITOR="vim"
 #   - Commands / Functions / Aliases    -
 #   +-----------------------------------*/
 
+# I mistype this too often
+alias makek="make"
+
+# Set a "mark" in a directory, and then go back to it from anywhere
 alias marco="pushd ."
 alias polo="popd"
 
@@ -109,7 +113,15 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 # always use translate-shell in interactive mode
 alias trans='trans -I'
 
+# use fzf (fuzzy find) by default with bat and to edit in vim
+alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
+# filesystem rpg https://github.com/facundoolano/rpg-cli
+RPG_CLI=/usr/local/bin/rpg-cli
+rpg () {
+   $RPG_CLI "$@"
+   cd "$($RPG_CLI --pwd)"
+}
 
 #   +----oOO-{/}-OOo---------------------+
 #   - Dotfiles                           -
