@@ -27,7 +27,7 @@ packadd! embark
 packadd! onedark
 
 " choose random colorscheme
-let ltime = 3 "localtime()
+let ltime = localtime()
 let colorschemes = ['xcodedark', 'xcodelight', 'gruvbox', 'Tomorrow', 'Tomorrow-Night', 'Tomorrow-Night-Eighties', 'dracula', 'embark', 'onedark', 'spacecamp', 'srcery', 'nord', 'default']
 let linecolors = ['darcula', 'ayu_light', 'gruvbox', 'ayu_light', 'darcula', 'darcula', 'dracula', 'embark', 'onedark', 'default', 'srcery', 'nord', 'default']
 " set lightline bar color (use it on the #plugin section)

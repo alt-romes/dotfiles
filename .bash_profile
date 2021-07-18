@@ -20,6 +20,8 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 alias emulicious='java -jar /Applications/Emulicious/Emulicious.jar'
 
+alias prolific='node ~/everything-else/prolific/check.js'
+
 # Default termdown font
 alias termdown='termdown -f standard'
 
