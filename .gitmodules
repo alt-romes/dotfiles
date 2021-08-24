@@ -1,0 +1,63 @@
+[submodule ".vim/pack/romes/start/nerdtree"]
+	path = .vim/pack/romes/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/pack/romes/start/vim-polyglot"]
+	path = .vim/pack/romes/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/romes/start/lightline.vim"]
+	path = .vim/pack/romes/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/pack/romes/start/vim-snipmate"]
+	path = .vim/pack/romes/start/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule ".vim/pack/romes/start/vim-addon-mw-utils"]
+	path = .vim/pack/romes/start/vim-addon-mw-utils
+	url = https://github.com/marcweber/vim-addon-mw-utils
+[submodule ".vim/pack/romes/start/tlib_vim"]
+	path = .vim/pack/romes/start/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
+[submodule ".vim/pack/romes/start/vim-snippets"]
+	path = .vim/pack/romes/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule ".vim/pack/romes/start/auto-pairs"]
+	path = .vim/pack/romes/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule ".vim/pack/romes/start/java-syntax.vim"]
+	path = .vim/pack/romes/start/java-syntax.vim
+	url = https://github.com/uiiaoo/java-syntax.vim
+[submodule ".vim/pack/romes/start/tagbar"]
+	path = .vim/pack/romes/start/tagbar
+	url = https://github.com/preservim/tagbar
+[submodule ".vim/pack/romes/start/vim-anyfold"]
+	path = .vim/pack/romes/start/vim-anyfold
+	url = https://github.com/pseewald/vim-anyfold
+[submodule ".vim/pack/romes/start/vim-fold-cycle"]
+	path = .vim/pack/romes/start/vim-fold-cycle
+	url = https://github.com/arecarn/vim-fold-cycle
+[submodule ".vim/pack/romes/start/goyo.vim"]
+	path = .vim/pack/romes/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/romes/start/vim-commentary"]
+	path = .vim/pack/romes/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".vim/pack/romes/start/vim-jsdoc"]
+	path = .vim/pack/romes/start/vim-jsdoc
+	url = https://github.com/heavenshell/vim-jsdoc
+[submodule ".vim/pack/romes/start/ale"]
+	path = .vim/pack/romes/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".vim/pack/themes/opt/dracula"]
+	path = .vim/pack/themes/opt/dracula
+	url = https://github.com/dracula/vim
+[submodule ".vim/pack/themes/opt/embark"]
+	path = .vim/pack/themes/opt/embark
+	url = https://github.com/embark-theme/vim
+[submodule ".vim/pack/themes/opt/onedark"]
+	path = .vim/pack/themes/opt/onedark
+	url = https://github.com/joshdick/onedark.vim
+[submodule ".vim/pack/romes/opt/vim-grammarous"]
+	path = .vim/pack/romes/opt/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous.git
+[submodule ".vim/pack/romes/opt/vim-hoogle"]
+	path = .vim/pack/romes/opt/vim-hoogle
+	url = https://github.com/Twinside/vim-hoogle.git
