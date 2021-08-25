@@ -39,7 +39,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Haskell Environment
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH"
 # Control (custom scripts)
-export PATH="$HOME/control:$PATH"
+export PATH="$HOME/control/util:$PATH"
 
 
 # Start countdown and when done log time into time log
