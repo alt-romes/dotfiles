@@ -136,3 +136,6 @@ alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=
 # Pull remote submodule changes with
 # config submodule update --remote
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# use wal colorscheme
+(cat ~/.cache/wal/sequences &)
