@@ -25,11 +25,6 @@ alias prolific='node ~/everything-else/prolific/check.js'
 # Default termdown font
 alias termdown='termdown -f standard'
 
-# Nativescript-Vue Environment
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home
-nankicards="$()"
-export ANDROID_HOME=/usr/local/share/android-sdk
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 # Homebrew's sbin
 export PATH="/usr/local/sbin:$PATH"
 # Cargo

@@ -4216,6 +4216,10 @@
 	<true/>
 	<key>InvalidateShadowTimesPerSecond</key>
 	<real>0.0</real>
+	<key>NeverWarnAboutShortLivedSessions_BAC244EF-B55E-494E-BF00-89C2F3BF5858</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_BAC244EF-B55E-494E-BF00-89C2F3BF5858_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
