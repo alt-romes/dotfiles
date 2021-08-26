@@ -130,7 +130,10 @@ rpg () {
 alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=$HOME'
 # Pull remote submodule changes with
 # config submodule update --remote
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # use wal colorscheme
-(cat ~/.cache/wal/sequences &)
+if [[ -d ~/.cache/wal/sequences ]]
+then
+    (cat ~/.cache/wal/sequences &)
+fi
