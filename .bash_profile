@@ -70,7 +70,11 @@ alias fuck='sudo $(history -p \!\!)'
 
 
 # ---- clean up
-
+function fastpush() {
+    git add .
+    git commit -m "$1"
+    git push
+}
 
 
 #   +----oOO-{%}-OOo---------------------+
