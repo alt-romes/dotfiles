@@ -14,6 +14,7 @@
 [log]
 	graph = true
 [alias]
+    submodules = submodule update --recursive --remote --merge
     
     denselog = dlog
 
