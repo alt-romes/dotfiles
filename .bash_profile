@@ -133,7 +133,7 @@ alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # use wal colorscheme
-if [[ -d ~/.cache/wal/sequences ]]
+if [[ -f ~/.cache/wal/sequences ]]
 then
     (cat ~/.cache/wal/sequences &)
 fi
