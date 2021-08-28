@@ -13,12 +13,15 @@ export PATH="$HOME/.cargo/bin:$PATH" # Cargo
 export PATH="$HOME/control/util:$PATH" # Control (custom scripts)
 
 # $PS1
-white="\[\[\033[0m\]"
-colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]")
-kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)")
-randomcolor=${colors[$(($RANDOM % 3))]}
-export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$(($RANDOM % 7))]}${white} "
-# export PS1="\[\033[01;32m\][\[\033[0m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
+function setps1() {
+    white="\[\[\033[0m\]"
+    colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)")
+    randomcolor=${colors[$(($RANDOM % 7))]}
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$(($RANDOM % 7))]}${white} "
+    # export PS1="\[\033[01;32m\][\[\033[0m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
+}
+setps1
 
 # don't overwrite by default when moving or copying
 alias mv='mv -i'
