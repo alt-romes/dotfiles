@@ -17,9 +17,8 @@ function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
     kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)")
-    randomcolor=${colors[$(($RANDOM % 7))]}
-    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$(($RANDOM % 7))]}${white} "
-    # export PS1="\[\033[01;32m\][\[\033[0m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
+    randomcolor=${colors[$((RANDOM % 7))]}
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 7))]}${white} "
 }
 setps1
 
@@ -49,14 +48,15 @@ fi
 # I mistype this too often
 alias makek="make"
 
-# Set a "mark" in a directory, and then go back to it from anywhere
-alias marco="pushd ."
-alias polo="popd"
-
 function fastpush() {
     git add .
     git commit -m "$1"
     git push
+}
+
+function uninstallfind() {
+    find $HOME -iname "*$1*" 2> /dev/null
+    launchctl list | grep -i "$1"
 }
 
 alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
