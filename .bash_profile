@@ -80,5 +80,7 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 # always use translate-shell in interactive mode
 alias trans='trans -I'
 
+alias walb='wal -i ~/Pictures/backgrounds --saturate 0.88'
+
 # use fzf (fuzzy find) by default with bat and to edit in vim
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
