@@ -1,88 +1,30 @@
-alias git='LANG=en_GB git'
-
-alias publishromes='npm run build; cd alt-romes.github.io; git init; git add .; git commit -m "update build"; git push -f https://github.com/alt-romes/alt-romes.github.io.git; cd ..'
-alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
-alias love='/Applications/love.app/Contents/MacOS/love'
-
-alias matrix='perl -e "$|++; while (1) { print \" \" x (rand(35) + 1), int(rand(2)) }"'
-alias whatismyip='curl ifconfig.me;echo '
-
-alias weather='curl wttr.in'
-
-alias dunnet='emacs -batch -l dunnet'
-
-alias deutsch="sentences -o -c -t deutsch"
-alias japanese="sentences -o -c -t japanese"
-
-alias jplookup="python3 -m jamdict.tools lookup"
-
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-
-alias emulicious='java -jar /Applications/Emulicious/Emulicious.jar'
-
-alias prolific='node ~/everything-else/prolific/check.js'
-
-# Default termdown font
-alias termdown='termdown -f standard'
-
-# Homebrew's sbin
-export PATH="/usr/local/sbin:$PATH"
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-# Haskell Stack builds uses this directory
-export PATH="$HOME/.local/bin:$PATH"
-# Haskell Environment
-export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH"
-# Control (custom scripts)
-export PATH="$HOME/control/util:$PATH"
-
-
-# Start countdown and when done log time into time log
-# Termdown with logging to log file
-tasktimer(){
-    if [ "$1" == "" ] || [ "$2" == "" ]; then
-        echo "Usage: tasktimer task time"
-        return
-    fi
-    termdown -s -T $1 $2 && logtime.sh $1 $2
-}
-
-
-colors[0]="\[\033[31m\]"
-colors[1]="\[\033[32m\]"
-colors[2]="\[\033[33m\]"
-index=$(($RANDOM % 3))
-randomcolor=${colors[index]}
-#randomcolor="\[\033[0m\]"
-
-# Choose random color from prompt and costumize it
-# export PS1="${randomcolor}\W \u\$ \[\033[0m\]"
-export PS1="\[\033[01;32m\][\[\033[0m\]\W\[\033[01;32m\]] λ\[\033[00m\] " # prompt do david
-
-# default browser is lynx (used by ddgr) 
-export BROWSER=lynx
-
 # Make sure bashrc is run as well
-# [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
+# [[ -f ~/.bashrc ]] && source ~/.bashrc
 
-# when u fuck up, execute previous command as root
-alias fuck='sudo $(history -p \!\!)'
+# +----oOO-{%}-OOo---------------------+
+# - Base config                        -
+# +-----------------------------------*/
 
+# $PATH
+export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
+export PATH="$HOME/.local/bin:$PATH" # .local/bin
+export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
+export PATH="$HOME/.cargo/bin:$PATH" # Cargo
+export PATH="$HOME/control/util:$PATH" # Control (custom scripts)
 
-# ---- clean up
-function fastpush() {
-    git add .
-    git commit -m "$1"
-    git push
+# $PS1
+function setps1() {
+    white="\[\[\033[0m\]"
+    colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)")
+    randomcolor=${colors[$((RANDOM % 7))]}
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 7))]}${white} "
 }
+setps1
 
-
-#   +----oOO-{%}-OOo---------------------+
-#   - Base config                        -
-#   +-----------------------------------*/
-
-# don't overwrite by default when moving
+# don't overwrite by default when moving or copying
 alias mv='mv -i'
+alias cp='cp -i'
 
 # don't put duplicates in history
 HISTCONTROL=ignoredups
@@ -90,22 +32,46 @@ HISTCONTROL=ignoredups
 # default editor is vim
 export EDITOR="vim"
 
-#   +----oOO-{&}-OOo---------------------+
-#   - Commands / Functions / Aliases    -
-#   +-----------------------------------*/
+# load bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# use wal colorscheme
+if [[ -f ~/.cache/wal/sequences ]]
+then
+    (cat ~/.cache/wal/sequences &)
+fi
+
+# +----oOO-{&}-OOo---------------------+
+# - Commands / Functions / Aliases    -
+# +-----------------------------------*/
 
 # I mistype this too often
 alias makek="make"
 
-# Set a "mark" in a directory, and then go back to it from anywhere
-alias marco="pushd ."
-alias polo="popd"
+function fastpush() {
+    git add .
+    git commit -m "$1"
+    git push
+}
 
+function uninstallfind() {
+    find $HOME -iname "*$1*" 2> /dev/null
+    launchctl list | grep -i "$1"
+}
 
-#   +----oOO-{&}-OOo---------------------+
-#   - Extras with dependencies in       -
-#   - control/docs/dependencies.sh      -
-#   +-----------------------------------*/
+alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
+alias matrix='perl -e "$|++; while (1) { print \" \" x (rand(35) + 1), int(rand(2)) }"'
+alias whatismyip='curl ifconfig.me;echo '
+alias weather='curl wttr.in'
+alias dunnet='emacs -batch -l dunnet'
+alias deutsch="sentences -o -c -t deutsch"
+alias japanese="sentences -o -c -t japanese"
+
+# +----oOO-{&}-OOo---------------------+
+# - Extras with dependencies in       -
+# - control/docs/dependencies.sh      -
+# - (outdated -- todo: redo)          -
+# +-----------------------------------*/
 
 # override ls with exa
 alias ls='exa'
@@ -114,30 +80,7 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 # always use translate-shell in interactive mode
 alias trans='trans -I'
 
+alias walb='wal -i ~/Pictures/backgrounds --saturate 0.88'
+
 # use fzf (fuzzy find) by default with bat and to edit in vim
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-
-# filesystem rpg https://github.com/facundoolano/rpg-cli
-RPG_CLI=/usr/local/bin/rpg-cli
-rpg () {
-   $RPG_CLI "$@"
-   cd "$($RPG_CLI --pwd)"
-}
-
-#   +----oOO-{/}-OOo---------------------+
-#   - Dotfiles                           -
-#   +-----------------------------------*/
-
-# Initialize a repository first as:
-# git init --bare $HOME/.myconf
-# config config status.showUntrackedFiles no
-alias config='/usr/bin/env git --git-dir=$HOME/control/dotfiles.git --work-tree=$HOME'
-# Pull remote submodule changes with
-# config submodule update --remote
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# use wal colorscheme
-if [[ -f ~/.cache/wal/sequences ]]
-then
-    (cat ~/.cache/wal/sequences &)
-fi
