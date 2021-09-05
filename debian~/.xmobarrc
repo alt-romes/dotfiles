@@ -1,0 +1,33 @@
+Config { font = "xft:scientifica:pixelsize=20:antialias=true:hinting=true"
+       , additionalFonts = [
+		"xft:IBMPlexSansJP-Bold:pixelsize=18:antialias=true:hinting=true",
+		"xft:IBMPlexSansJP-Medium:pixelsize=18:antialias=true:hinting=true"
+		]
+
+       , alpha = 255
+       , position = Top
+
+       , bgColor = "#ffffea"
+       , border = FullB
+       , borderColor = "#d1d1d1"
+
+       , allDesktops = True
+
+       , commands = [ Run UnsafeStdinReader
+                    , Run Date "%H:%M" "date" 10
+                    , Run Battery ["-t", "Batt: <left>%"] 50
+		    , Run Cpu [] 50
+                    ]
+
+       , sepChar = "%"
+       , alignSep = "}{"
+
+       , template = " λ <fc=#51AFEF>romes</fc>}{\
+                      \<fc=#ff00ff><action=`st -e ranger applications`>apps</action></fc> | \
+                      \<fc=#53ED28><action=`st -e ranger`>files</action></fc> | \
+                      \<fc=#51AFEF>%cpu%</fc> | \
+                      \<fc=#ee9a00>%battery%</fc> | \
+                      \<fc=#ff00ff>%date%</fc> |\
+                      \<fc=#bbbbbb><action='dmenu_run'> -o </action></fc>"
+       }
+
