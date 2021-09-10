@@ -1,0 +1,28 @@
+.thunar .sidebar {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.thunar .sidebar .view {
+    background: url("/home/romes/.config/gtk-3.0/assets/love.png");
+    background-size:120px;
+    background-repeat : no-repeat;
+    background-position: 50% calc(100%-40px);
+}
+
+.thunar scrolledwindow widget {
+    background : url("/home/romes/.config/gtk-3.0/assets/border.png");
+    background-size : 122px;
+    background-repeat : no-repeat;
+    background-position: calc(100%- 14px) calc(100%-14px);
+}
+
+.thunar .standard-view .view * { background-image: none; }
+.thunar .standard-view .view * { background: transparent; color: black; }
+
+.thunar scrolledwindow treeview.view:selected {
+    background: linear-gradient(to right, #ff8888, #ff8888);
+    border-radius: 40px;
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
