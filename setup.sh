@@ -17,6 +17,11 @@ then
 	ln -sFi "${HERE}/.vim/" .
 	ln -sFi "${HERE}/.iterm/" .
 
+    echo "TODO: Linux only?"
+    mkdir -p .config
+    ln -sFi "${HERE}/.config/openbox/" ./.config/
+    ln -si "${HERE}/.config/picom.conf" ./.config/
+
 	cd "${HERE}" || exit 1
 fi
 
