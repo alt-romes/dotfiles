@@ -21,6 +21,12 @@ then
     mkdir -p .config
     ln -sFi "${HERE}/.config/openbox/" ./.config/
     ln -si "${HERE}/.config/picom.conf" ./.config/
+    
+    ln -sFi "${HERE}/.themes/" .
+    # extract openbox themes to .themes
+    find "${HERE}.themes/openbox-theme-collections/" -maxdepth 1 -type d -exec cp -R -t "${HERE}/.themes/" {} +
+
+
 
 	cd "${HERE}" || exit 1
 fi
