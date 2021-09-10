@@ -9,16 +9,16 @@
 export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
 export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
-export PATH="$HOME/.cargo/bin:$PATH" # Cargo
+export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
 export PATH="$HOME/control/util:$PATH" # Control (custom scripts)
 
 # $PS1
 function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
-    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ")
     randomcolor=${colors[$((RANDOM % 7))]}
-    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 7))]}${white} "
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 15))]}${white} "
 }
 setps1
 
@@ -40,6 +40,9 @@ if [[ -f ~/.cache/wal/sequences ]]
 then
     (cat ~/.cache/wal/sequences &)
 fi
+
+# disable homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
 
 # +----oOO-{&}-OOo---------------------+
 # - Commands / Functions / Aliases    -
@@ -84,3 +87,7 @@ alias walb='wal -i ~/Pictures/backgrounds --saturate 0.88'
 
 # use fzf (fuzzy find) by default with bat and to edit in vim
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+alias cvlc="vlc -I rc"
+alias nvlc="vlc -I ncurses"
+alias servevlc='vlc -I rc -vvv --sout "#transcode{vcodec=mp1v,acodec=mpga,soverlay}:std{access=udp{caching=1000},dst=192.168.1.78:6444,mux=ts}"'
