@@ -21,11 +21,16 @@ then
     mkdir -p .config
     ln -sFi "${HERE}/.config/openbox/" ./.config/
     ln -si "${HERE}/.config/picom.conf" ./.config/
+    ln -sFi "${HERE}/.config/gtk-3.0/" ./.config/
     
     ln -sFi "${HERE}/.themes/" .
     # extract openbox themes to .themes
     find "${HERE}.themes/openbox-theme-collections/" -maxdepth 1 -type d -exec cp -R -t "${HERE}/.themes/" {} +
 
+    ln -sFi "${HERE}/.icons/" .
+
+    ln -si "${HERE}/.xinitrc" .
+    ln -si "${HERE}/.Xresources" .
 
 
 	cd "${HERE}" || exit 1

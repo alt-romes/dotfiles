@@ -1,1 +1,2 @@
+hsetroot -solid rgb:8/8/4
 picom -b 2> /dev/null

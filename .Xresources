@@ -1,0 +1,23 @@
+*.font: xft:CozetteVector:style=Regular:size=12
+*.boldFont: xft:CozetteVector:style=Bold:size=12
+*.italicFont: xft:CozetteVector:style=Italic:size=12
+*.boldItalicFont: xft:CozetteVector:style=Bold Italic:size=12
+
+!*.font: xft:IBM Plex Mono:style=Regular:size=8
+!*.boldFont: xft:IBM Plex Mono:style=Bold:size=8
+!*.italicFont: xft:IBM Plex Mono:style=Italic:size=8
+!*.boldItalicFont: xft:IBM Plex Mono:style=Bold Italic:size=8
+
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 1
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
