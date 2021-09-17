@@ -10,7 +10,7 @@ export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
 export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
-export PATH="$HOME/control/util:$PATH" # Control (custom scripts)
+export PATH="$HOME/control/util/bin:$PATH" # Control (custom scripts)
 
 # $PS1
 function setps1() {
@@ -83,11 +83,14 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 # always use translate-shell in interactive mode
 alias trans='trans -I'
 
-alias walb='wal -i ~/Pictures/backgrounds --saturate 0.88'
+alias wal='wal --saturate 0.88'
+alias walb='wal -i ~/Pictures/backgrounds'
 
 # use fzf (fuzzy find) by default with bat and to edit in vim
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias cvlc="vlc -I rc"
 alias nvlc="vlc -I ncurses"
-alias servevlc='vlc -I rc -vvv --sout "#transcode{vcodec=mp1v,acodec=mpga,soverlay}:std{access=udp{caching=1000},dst=192.168.1.78:6444,mux=ts}"'
+alias servevlc='vlc -I rc -vvv --sout "#transcode{vcodec=mp1v,acodec=mpga,soverlay}:std{access=udp{caching=1000},dst=192.168.1.102:25565,mux=ts}"'
+
+# qemu on mac should be run with -accel hvf
