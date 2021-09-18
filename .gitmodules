@@ -34,6 +34,3 @@
 [submodule ".vim/pack/themes/opt/wal.vim"]
 	path = .vim/pack/themes/opt/wal.vim
 	url = https://github.com/dylanaraps/wal.vim
-[submodule ".themes/openbox-theme-collections"]
-	path = .themes/openbox-theme-collections
-	url = https://github.com/addy-dclxvi/openbox-theme-collections
