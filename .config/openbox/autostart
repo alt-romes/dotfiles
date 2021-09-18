@@ -1,2 +1,4 @@
-hsetroot -solid rgb:8/8/4
+# hsetroot -solid rgb:8/8/4
+# load last saved pywal profile
+wal -R
 picom -b 2> /dev/null
