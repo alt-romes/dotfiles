@@ -7,10 +7,10 @@
 
 # $PATH
 export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
-export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
-export PATH="$HOME/control/util/bin:$PATH" # Control (custom scripts)
+export PATH="$HOME/.local/bin:$PATH" # .local/bin
+export PATH="$HOME/control/util/bin:$PATH" # Control scripts
 
 # $PS1
 function setps1() {
