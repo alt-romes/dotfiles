@@ -16,9 +16,9 @@ export PATH="$HOME/control/util/bin:$PATH" # Control scripts
 function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
-    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)")
     randomcolor=${colors[$((RANDOM % 7))]}
-    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 15))]}${white} "
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 16))]}${white} "
 }
 setps1
 
@@ -92,5 +92,8 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 alias cvlc="vlc -I rc"
 alias nvlc="vlc -I ncurses"
 alias servevlc='vlc -I rc -vvv --sout "#transcode{vcodec=mp1v,acodec=mpga,soverlay}:std{access=udp{caching=1000},dst=192.168.1.102:25565,mux=ts}"'
+
+alias bah=setps1
+alias bahb=walb
 
 # qemu on mac should be run with -accel hvf
