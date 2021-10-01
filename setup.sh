@@ -15,6 +15,7 @@ then
 	ln -si "${HERE}/.gitconfig" .
 	ln -si "${HERE}/.gitignore_global" .
 	ln -sFi "${HERE}/.vim/" .
+	ln -sFi "${HERE}/.emacs.d/" .
 	ln -sFi "${HERE}/.iterm/" .
 
     echo "TODO: Linux only?"
