@@ -7,10 +7,17 @@
 
 # $PATH
 export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
+export PATH="/usr/local/opt/openjdk/bin:$PATH" # Java
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
 export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/control/util/bin:$PATH" # Control scripts
+
+# JAVA
+export JAVA_HOME="$(/usr/libexec/java_home -v1.8.0_302)"
+export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
+alias java_versions="/usr/libexec/java_home -V"
+# export JAVA_HOME="$(/usr/libexec/java_home -v17)"
 
 # $PS1
 function setps1() {
@@ -95,5 +102,7 @@ alias servevlc='vlc -I rc -vvv --sout "#transcode{vcodec=mp1v,acodec=mpga,soverl
 
 alias bah=setps1
 alias bahb=walb
+
+alias walf="wal -f"
 
 # qemu on mac should be run with -accel hvf
