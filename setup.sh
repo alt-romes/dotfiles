@@ -22,11 +22,6 @@ then
     mkdir -p .config
     ln -sFi "${HERE}/.config/openbox/" ./.config/
     ln -si "${HERE}/.config/picom.conf" ./.config/
-    ln -sFi "${HERE}/.config/gtk-3.0/" ./.config/
-    
-    ln -sFi "${HERE}/.themes/" .
-
-    ln -sFi "${HERE}/.icons/" .
 
     ln -si "${HERE}/.xinitrc" .
     ln -si "${HERE}/.Xresources" .
@@ -42,8 +37,7 @@ then
 
     mkdir -p "$HOME/Pictures/backgrounds"
     echo "Move at least one background image to ~/Pictures/backgrounds"
-    echo "(Example: curl -L https://i.imgur.com/COg47x2.png > ~/Pictures/backgrounds/b1.png)"
-    echo "(... https://i.imgur.com/KlhtVEY.png > ~/Pictures/backgrounds/b2.png)"
+    echo "(Example: curl -L https://i.imgur.com/V2eZQPm.jpeg > ~/Pictures/backgrounds/b1.jpeg)"
     read -r -p "Input any key afterwards... "
 
     echo "Installing walbox (pywal + openbox)"
@@ -52,6 +46,7 @@ then
     mkdir -p "$HOME/.config/wal/templates/"
     cp -i themerc "$HOME/.config/wal/templates/"
     echo "Copying openbox pywal theme to ~/.themes"
+    mkdir -p "$HOME/.themes/"
     cp -ri Walbox "$HOME/.themes/Walbox"
     echo "Creating symlink in openbox theme to pywal user template generated theme (theme dependency)"
     ln -s "$HOME/.cache/wal/themerc" "$HOME/.themes/Walbox/openbox-3/themerc"
