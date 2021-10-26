@@ -22,6 +22,7 @@ then
     mkdir -p .config
     ln -sFi "${HERE}/.config/openbox/" ./.config/
     ln -si "${HERE}/.config/picom.conf" ./.config/
+    ln -sFi "${HERE}/.config/tint2/" ./.config/
 
     ln -si "${HERE}/.xinitrc" .
     ln -si "${HERE}/.Xresources" .
