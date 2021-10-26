@@ -14,9 +14,9 @@ export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/control/util/bin:$PATH" # Control scripts
 
 # JAVA
-export JAVA_HOME="$(/usr/libexec/java_home -v1.8.0_302)"
+export JAVA_HOME="$(/usr/libexec/java_home -v17 2> /dev/null)"
 export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
-alias java_versions="/usr/libexec/java_home -V"
+alias java-versions="/usr/libexec/java_home -V"
 # export JAVA_HOME="$(/usr/libexec/java_home -v17)"
 
 # $PS1
