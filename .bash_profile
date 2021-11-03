@@ -105,4 +105,8 @@ alias bahb=walb
 
 alias walf="wal -f"
 
-# qemu on mac should be run with -accel hvf
+alias anime="ani-cli"
+
+function ramdisk() { diskutil erasedisk APFS "RAMDisk" `hdiutil attach -nomount ram://$((2048*$1))`; }
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
