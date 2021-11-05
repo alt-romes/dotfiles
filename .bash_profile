@@ -120,8 +120,9 @@ then
 
     export XDG_RUNTIME_DIR="/run/user/$(id -u)" # Required by some essential programs (pipewire~, wayland, ...)"
     if ! test -d "${XDG_RUNTIME_DIR}"; then
-        mkdir "${XDG_RUNTIME_DIR}"
-        chmod 0700 "${XDG_RUNTIME_DIR}"
+        echo "Creating XDG_RUNTIME_DIR in /run/user/$(id -u)"
+        sudo mkdir "${XDG_RUNTIME_DIR}"
+        sudo chmod 0700 "${XDG_RUNTIME_DIR}"
     fi
 
 fi
