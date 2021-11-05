@@ -118,11 +118,9 @@ then
 elif [[ $(uname) == "Linux" ]]
 then
 
-    export XDG_RUNTIME_DIR="/run/user/$(id -u)" # Required by some essential programs (pipewire~, wayland, ...)"
+    export XDG_RUNTIME_DIR="/tmp/$(id -u)-runtime-dir" # Required by some essential programs (pipewire~, wayland, ...)"
     if ! test -d "${XDG_RUNTIME_DIR}"; then
-        echo "Creating XDG_RUNTIME_DIR in /run/user/$(id -u)"
-        sudo mkdir "${XDG_RUNTIME_DIR}"
-        sudo chmod 0700 "${XDG_RUNTIME_DIR}"
+        mkdir -m 0700 -p "${XDG_RUNTIME_DIR}"
     fi
 
 fi
