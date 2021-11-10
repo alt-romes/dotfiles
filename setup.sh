@@ -71,6 +71,13 @@ fi
 # macOS only
 if [[ $(uname) == "Darwin" ]]
 then
+
+    echo "Updating the terminfo database..."
+	ln -sFi "${HERE}/.terminfo/" "$HOME"
+    tic -o "$HOME/.terminfo" "$HOME/.terminfo/tmux.terminfo"
+    tic -o "$HOME/.terminfo" "$HOME/.terminfo/tmux-256color.terminfo"
+    tic -o "$HOME/.terminfo" "$HOME/.terminfo/xterm-256color.terminfo"
+
     read -p "Overwrite iTerm preferences? (y/n) " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
