@@ -48,9 +48,6 @@ then
     (cat ~/.cache/wal/sequences &)
 fi
 
-# disable homebrew analytics
-export HOMEBREW_NO_ANALYTICS=1
-
 # +----oOO-{&}-OOo---------------------+
 # - Commands / Functions / Aliases    -
 # +-----------------------------------*/
@@ -62,11 +59,6 @@ function fastpush() {
     git add .
     git commit -m "$1"
     git push
-}
-
-function uninstallfind() {
-    find $HOME -iname "*$1*" 2> /dev/null
-    launchctl list | grep -i "$1"
 }
 
 alias clear='[ $[$RANDOM % 5] = 0 ] && gtimeout 6 cbeams -o; clear || clear'
@@ -105,4 +97,30 @@ alias bahb=walb
 
 alias walf="wal -f"
 
-# qemu on mac should be run with -accel hvf
+alias anime="ani-cli"
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+
+if [[ $(uname) == "Darwin" ]]
+then
+
+    # disable homebrew analytics
+    export HOMEBREW_NO_ANALYTICS=1
+
+    function ramdisk() { diskutil erasedisk APFS "RAMDisk" `hdiutil attach -nomount ram://$((2048*$1))`; }
+
+    function uninstallfind() {
+        find $HOME -iname "*$1*" 2> /dev/null
+        launchctl list | grep -i "$1"
+    }
+
+elif [[ $(uname) == "Linux" ]]
+then
+
+    export XDG_RUNTIME_DIR="/tmp/$(id -u)-runtime-dir" # Required by some essential programs (pipewire~, wayland, ...)"
+    if ! test -d "${XDG_RUNTIME_DIR}"; then
+        mkdir -m 0700 -p "${XDG_RUNTIME_DIR}"
+    fi
+
+fi

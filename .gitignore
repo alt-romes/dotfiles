@@ -2,3 +2,4 @@
 .themes/*/
 *.swp
 .emacs.d/elpa/
+.terminfo/*/*
