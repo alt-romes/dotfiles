@@ -120,13 +120,15 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>6</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>1</name>
-      <name>2</name>
-      <name>3</name>
-      <name>4</name>
+      <name>一</name>
+      <name>二</name>
+      <name>三</name>
+      <name>四</name>
+      <name>五</name>
+      <name>六</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -155,7 +157,7 @@
   <margins>
     <top>0</top>
     <bottom>0</bottom>
-    <left>44</left>
+    <left>0</left>
     <right>0</right>
   </margins>
   <dock>
