@@ -13,9 +13,6 @@
 [submodule ".vim/pack/romes/start/vim-commentary"]
 	path = .vim/pack/romes/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".vim/pack/romes/start/auto-pairs"]
-	path = .vim/pack/romes/start/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs
 [submodule ".vim/pack/themes/opt/wal.vim"]
 	path = .vim/pack/themes/opt/wal.vim
 	url = https://github.com/dylanaraps/wal.vim
