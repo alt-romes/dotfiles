@@ -3,3 +3,4 @@
 *.swp
 .emacs.d/elpa/
 .terminfo/*/*
+.vim/spell
