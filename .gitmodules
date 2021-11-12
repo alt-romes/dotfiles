@@ -31,9 +31,6 @@
 [submodule ".vim/pack/themes/opt/wal.vim"]
 	path = .vim/pack/themes/opt/wal.vim
 	url = https://github.com/dylanaraps/wal.vim
-[submodule "build-dependencies/walbox"]
-	path = build-dependencies/walbox
-	url = https://github.com/edisile/walbox
 [submodule ".vim/pack/romes/start/vim-pandoc-syntax"]
 	path = .vim/pack/romes/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
