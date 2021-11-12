@@ -25,3 +25,6 @@
 [submodule ".vim/pack/romes/start/tabular"]
 	path = .vim/pack/romes/start/tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/pack/romes/start/vim-surround"]
+	path = .vim/pack/romes/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
