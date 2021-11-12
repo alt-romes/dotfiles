@@ -2,5 +2,6 @@
 .themes/*/
 *.swp
 .emacs.d/elpa/
+.emacs.d/emacspeak/
 .terminfo/*/*
-.vim/spell
+.vim/spell/

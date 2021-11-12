@@ -1,6 +1,6 @@
 (setenv "DTK_PROGRAM" "mac")
 (setq dtk-set-punctuations "none")
-(load-file "/Users/romes/.emacs.d/emacspeak/lisp/emacspeak-setup.el")
+;; (load-file "~/.emacs.d/emacspeak/lisp/emacspeak-setup.el")
 
 ;; Set up package.el to work with MELPA
 (require 'package)
