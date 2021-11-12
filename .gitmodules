@@ -40,3 +40,6 @@
 [submodule ".vim/pack/romes/start/tabular"]
 	path = .vim/pack/romes/start/tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule ".emacs.d/emacspeak"]
+	path = .emacs.d/emacspeak
+	url = git@github.com:tvraman/emacspeak.git
