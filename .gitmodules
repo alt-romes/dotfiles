@@ -37,3 +37,6 @@
 [submodule ".vim/pack/romes/start/vim-pandoc-syntax"]
 	path = .vim/pack/romes/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule ".vim/pack/romes/start/tabular"]
+	path = .vim/pack/romes/start/tabular
+	url = git@github.com:godlygeek/tabular.git
