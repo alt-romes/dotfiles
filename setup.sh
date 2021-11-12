@@ -15,7 +15,7 @@ then
 	ln -si "${HERE}/.gitconfig" "$HOME"
 	ln -si "${HERE}/.gitignore_global" "$HOME"
 	ln -sFi "${HERE}/.vim/" "$HOME"
-	ln -sFi "${HERE}/.emacs.d/" "$HOME"
+	ln -sFi "${HERE}/.emacs.d/" "$HOME" && echo "To install emacspeak run: cd .emacs.d && ./install-emacspeak.sh"
 	ln -sFi "${HERE}/.iterm/" "$HOME"
 
     # linux specific dotfiles
@@ -55,7 +55,9 @@ then
     then
 
         echo "Installing walbox (pywal + openbox)"
-        cd build-dependencies/walbox/ || exit 1
+        cd build-dependencies/ || exit 1
+        ./fetch-walbox.sh
+        cd walbox || exit 1
         echo "Copying user template to .config/wal/templates/"
         mkdir -p "$HOME/.config/wal/templates/"
         cp -i themerc "$HOME/.config/wal/templates/"
@@ -92,3 +94,4 @@ then
         echo "  iTerm: Note, if a required font isn't installed, some profiles might revert to the default font"
     fi
 fi
+
