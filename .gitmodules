@@ -18,7 +18,7 @@
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
 [submodule ".vim/pack/romes/start/tabular"]
 	path = .vim/pack/romes/start/tabular
-	url = git@github.com:godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular
 [submodule ".vim/pack/romes/start/vim-surround"]
 	path = .vim/pack/romes/start/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround
