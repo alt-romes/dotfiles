@@ -4,9 +4,6 @@
 [submodule ".vim/pack/romes/start/vim-polyglot"]
 	path = .vim/pack/romes/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule ".vim/pack/romes/start/goyo.vim"]
-	path = .vim/pack/romes/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
 [submodule ".vim/pack/romes/start/vim-commentary"]
 	path = .vim/pack/romes/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
