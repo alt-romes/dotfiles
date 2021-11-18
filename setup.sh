@@ -16,7 +16,6 @@ then
 	ln -si "${HERE}/.gitignore_global" "$HOME"
 	ln -sFi "${HERE}/.vim/" "$HOME"
 	ln -sFi "${HERE}/.emacs.d/" "$HOME" && echo "To install emacspeak run: cd .emacs.d && ./install-emacspeak.sh"
-	ln -sFi "${HERE}/.iterm/" "$HOME"
 
     # linux specific dotfiles
     if [[ $(uname) == "Linux" ]]
@@ -83,15 +82,7 @@ then
     read -p "Overwrite iTerm preferences? (y/n) " -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        echo "TODO: Change this to a soft link?"
-        cp -i .iterm/com.googlecode.iterm2.plist "$HOME/Library/Preferences/"
-
-        echo
-        echo "Important => Required manual actions:"
-        echo "  iTerm: Go to 'Preferences > General > Preferences'"
-        echo "  iTerm: Select 'Load preferences from a custom folder or URL'"
-        echo "  iTerm: Input '~/.iterm'"
-        echo "  iTerm: Note, if a required font isn't installed, some profiles might revert to the default font"
+        ln -si "$HERE/.iterm/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
     fi
 fi
 
