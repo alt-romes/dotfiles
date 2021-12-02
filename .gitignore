@@ -1,8 +1,6 @@
-.vim/.netrwhist
 .themes/*/
 *.swp
 .emacs.d/elpa/
 .emacs.d/emacspeak/
 build-dependencies/walbox/
 .terminfo/*/*
-.vim/spell/
