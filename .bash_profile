@@ -17,15 +17,14 @@ export PATH="$HOME/control/util/bin:$PATH" # Control scripts
 export JAVA_HOME="$(/usr/libexec/java_home -v17 2> /dev/null)"
 export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
 alias java-versions="/usr/libexec/java_home -V"
-# export JAVA_HOME="$(/usr/libexec/java_home -v17)"
 
 # $PS1
 function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
-    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)" "⚑")
     randomcolor=${colors[$((RANDOM % 7))]}
-    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 16))]}${white} "
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 17))]}${white} "
 }
 setps1
 
@@ -82,7 +81,7 @@ alias ll='exa --git --tree --level=2 -la --header --group'
 # always use translate-shell in interactive mode
 alias trans='trans -I'
 
-alias wal='wal --saturate 0.88'
+alias wal='wal --saturate 0.8'
 alias walb='wal -i ~/Pictures/backgrounds'
 
 # use fzf (fuzzy find) by default with bat and to edit in vim

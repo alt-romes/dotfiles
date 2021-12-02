@@ -17,10 +17,13 @@ then
 	ln -sFi "${HERE}/.vim/" "$HOME"
 	ln -sFi "${HERE}/.emacs.d/" "$HOME" && echo "To install emacspeak run: cd .emacs.d && ./install-emacspeak.sh"
 
+    mkdir -p "$HOME/config"
+    ln -sFi "${HERE}/.config/weechat/" "$HOME/.config/"
+
+
     # linux specific dotfiles
     if [[ $(uname) == "Linux" ]]
     then
-        mkdir -p "$HOME/config"
         ln -sFi "${HERE}/.config/openbox/" "$HOME/.config/"
         ln -si "${HERE}/.config/picom.conf" "$HOME/.config/"
         ln -sFi "${HERE}/.config/tint2/" "$HOME/.config/"
