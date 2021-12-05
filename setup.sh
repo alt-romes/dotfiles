@@ -17,7 +17,7 @@ then
 	ln -sFi "${HERE}/.vim/" "$HOME"
 	ln -sFi "${HERE}/.emacs.d/" "$HOME" && echo "To install emacspeak run: cd .emacs.d && ./install-emacspeak.sh"
 
-    mkdir -p "$HOME/config"
+    mkdir -p "$HOME/.config"
     ln -sFi "${HERE}/.config/weechat/" "$HOME/.config/"
 
 
