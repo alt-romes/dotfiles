@@ -21,12 +21,14 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu alacritty --class 'launcher' --command bash -c 'compgen -c | sort -u | fzf --no-info --color="bg:#173f4f,fg:#35b9ab,bg+:#68cbc0,fg+:#516f7b,pointer:#173f4f,hl+:#173f4f,hl:$color1" | xargs -r swaymsg -t command exec'
+for_window [app_id="^launcher$"] floating enable, border none, resize set width 400 px height 100 px, move position center
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $(if [[ "None" == $wallpaper ]]; then echo /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png; else echo $wallpaper; fi) fill
+output * bg $(if [[ "None" == $wallpaper ]]; then echo ~/Pictures/backgrounds/default.jpeg; else echo $wallpaper; fi) fill
 # output * bg $(echo $wallpaper) fill
 
 #
@@ -221,9 +223,10 @@ bar {
     }
 }
 
-client.focused $background $color1 $background
+client.focused $background $color1 $background $color1
 
 include /etc/sway/config.d/*
 
 # Start pipewire (audio)
 # exec pipewire
+# exec pipewire-media-session
