@@ -1,5 +1,6 @@
 .DS_Store
 
+dist-newstyle/
 __pycache__
 .idea
 .vim/undofiles/%*
@@ -7,3 +8,9 @@ __pycache__
 *.swp
 
 *.class
+
+*.aux
+*.log
+
+*.hi
+*.o
