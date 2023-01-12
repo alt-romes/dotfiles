@@ -6,7 +6,8 @@
 # +-----------------------------------*/
 
 # $PATH
-export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
+# export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH" # Java
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
@@ -14,7 +15,7 @@ export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/control/util/bin:$PATH" # Control scripts
 
 # JAVA
-export JAVA_HOME="$(/usr/libexec/java_home -v17 2> /dev/null)"
+export JAVA_HOME="$(/usr/libexec/java_home 2> /dev/null)"
 export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
 alias java-versions="/usr/libexec/java_home -V"
 
@@ -22,9 +23,9 @@ alias java-versions="/usr/libexec/java_home -V"
 function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]" "\[\033[01;37m\]")
-    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "(( ͡° ͜ʖ ͡°)" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)" "⚑")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)" "⚑")
     randomcolor=${colors[$((RANDOM % 7))]}
-    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 17))]}${white} "
+    export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 16))]}${white} "
 }
 setps1
 
@@ -53,6 +54,9 @@ fi
 
 # I mistype this too often
 alias makek="make"
+alias maek="make"
+alias mak="make"
+alias mkae="make"
 
 function fastpush() {
     git add .
@@ -97,8 +101,13 @@ alias bahb=walb
 alias walf="wal -f"
 
 alias anime="ani-cli"
+alias httpserver="python -m http.server 25565"
 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+alias ghc-shell="nix-shell ~/ghc-dev/ghc.nix/"
+
+alias ghci-core="ghci -ddump-simpl -dsuppress-idinfo \
+-dsuppress-coercions -dsuppress-type-applications \
+-dsuppress-uniques -dsuppress-module-prefixes"
 
 
 if [[ $(uname) == "Darwin" ]]
@@ -123,3 +132,7 @@ then
     fi
 
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
