@@ -11,6 +11,9 @@ __pycache__
 
 *.aux
 *.log
+*.out
 
 *.hi
 *.o
+
+tags
