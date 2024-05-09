@@ -5,25 +5,38 @@
 # - Base config                        -
 # +-----------------------------------*/
 
-# $PATH
 eval "$(/opt/homebrew/bin/brew shellenv)" # Set PATH, MANPATH, etc., for Homebrew.
-export PATH="/opt/homebrew/opt/llvm@15/bin:$PATH"
+BREW_PREFIX="$(brew --prefix)"
+
+# $PATH
+export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" # Java
 export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH" # sphinx-docs
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
 export PATH="$HOME/.local/bin:$PATH" # .local/bin
-export PATH="$HOME/control/util/bin:$PATH" # Control scripts
+export PATH="$HOME/control/util/bin:$PATH"          # control scripts
+export PATH="$HOME/Developer/romes-utils/bin:$PATH" # romes-utils scripts
 export PATH="$HOME/ghc-dev/ghc-utils:$PATH" # ghc-util scripts, e.g. ghc-docker-jobs.sh aarch64-linux-deb10-validate
 export PATH="$HOME/.opam/CP.2023.03+b1~8.17~2023.03+beta1/bin:$PATH"
+export PATH="$HOME/.gem/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 
 # Library path
-export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+export LIBRARY_PATH="$LIBRARY_PATH:$BREW_PREFIX/lib"
 # Include path
-export CPATH="$CPATH:$(brew --prefix)/include"
+export CPATH="$CPATH:$BREW_PREFIX/include"
+
+# More paths
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+export LD_LIBRARY_PATH="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 
 # JAVA
-export JAVA_HOME="$(/usr/libexec/java_home 2> /dev/null)"
+# TO RUN THE MINECRAFT MOD YOU NEED VERSION 17 for some reason
+export JAVA_HOME="$(/usr/libexec/java_home -v 17 2> /dev/null)"
 export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
 alias java-versions="/usr/libexec/java_home -V"
 
@@ -31,7 +44,7 @@ alias java-versions="/usr/libexec/java_home -V"
 function setps1() {
     white="\[\[\033[0m\]"
     colors=("\[\033[01;31m\]" "\[\033[01;32m\]" "\[\033[01;33m\]" "\[\033[01;34m\]" "\[\033[01;35m\]" "\[\033[01;36m\]")
-    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "（╹◡╹）♡ " "(๑╹ω╹๑ )" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)" "⚑")
+    kaomoji=("(・_・)ノ" "(^_^♪)" "(>_<)" "(o^ ^o)" "(„• ᴗ •„)" "(๑˃ᴗ˂)ﻭ" "(*^.^*)" "ヾ(๑╹◡╹)ﾉ\"" "(๑╹ω╹๑ )" "ᕦ(ò_óˇ)ᕤ " "Σ(-᷅_-᷄๑)" "(ง'̀-'́)ง" "ʕ•ᴥ•ʔ" "(>^.^<)" "⚑")
     randomcolor=${colors[$((RANDOM % 7))]}
     export PS1="${randomcolor}(${white}\W${randomcolor}) ${kaomoji[$((RANDOM % 16))]}${white} "
 }
@@ -55,7 +68,7 @@ HISTCONTROL=ignoredups
 export EDITOR="vim"
 
 # load bash completion
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+[[ -r "$BREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$BREW_PREFIX/etc/profile.d/bash_completion.sh"
 
 # use wal colorscheme
 if [[ -f ~/.cache/wal/sequences ]]
@@ -73,6 +86,7 @@ alias makek="make"
 alias maek="make"
 alias mak="make"
 alias mkae="make"
+alias mk="make"
 
 alias g="git"
 
@@ -114,7 +128,7 @@ alias walf="wal -f"
 
 alias anime="ani-cli"
 alias httpserver="python -m http.server 25565"
-alias python="$(brew --prefix)/bin/python3"
+alias python="$BREW_PREFIX/bin/python3"
 
 alias ghc-shell="nix-shell ~/ghc-dev/ghc.nix/"
 
@@ -124,6 +138,9 @@ alias ghci-core="ghci -ddump-simpl -dsuppress-idinfo \
 
 
 alias docker-ghc-linux-deb10="~/ghc-dev/ghc-utils/ghc-docker-jobs.sh aarch64-linux-deb10-validate"
+
+# hledger!
+alias mybs="hledger bs -V -X € --infer-market-prices --cost --pretty"
 
 
 if [[ $(uname) == "Darwin" ]]
@@ -163,9 +180,22 @@ HISTFILESIZE=5000
 
 
 . "$HOME/.cargo/env"
+# Load vulkan SDK for local development
+. "$HOME/VulkanSDK/1.3.261.1/setup-env.sh" > /dev/null 2>&1
 
 # Enable/disable coreutils installed by homebrew
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# z
+. $BREW_PREFIX/etc/profile.d/z.sh
+
+# Let's try using the system Ruby to see how much we can build without external dependencies for haskell-swift/hxs
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# begin cob-cli completion
+source /Users/romes/.cob-cli/completion.sh
+# end cob-cli completion
+
+alias nixos='tart run nixos'

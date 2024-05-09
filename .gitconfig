@@ -1,6 +1,7 @@
 [user]
 	name = Rodrigo Mesquita
 	email = rodrigo.m.mesquita@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
 [push]
 	default = current
 [pull]
@@ -43,7 +44,7 @@
     pager = delta
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
@@ -61,4 +62,27 @@
 
 [diff]
     colorMoved = default
+    ; external = difft
 
+[blame]
+	; ignoreRevsFile = .git-blame-ignore-revs
+    ; ignoreRevsFile = .git-ignore-revs
+
+[rerere]
+    ; Rerere!
+	enabled = true
+
+[branch]
+    ; Sort git branch listing by recent commits
+	sort = -committerdate
+
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[maintenance]
+	repo = /Users/romes/hegg
+	repo = /Users/romes/ghc-dev/cabal
+	repo = /Users/romes/ghc-dev/ghc
+[gpg "ssh"]
+	allowedSignersFile = /Users/romes/.ssh/allowed_signers
