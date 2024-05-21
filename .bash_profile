@@ -16,6 +16,7 @@ export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
 export PATH="$HOME/.cargo/bin:$PATH" # Rust Platform
 export PATH="$HOME/.local/bin:$PATH" # .local/bin
 export PATH="$HOME/control/util/bin:$PATH"          # control scripts
+export PATH="$HOME/control/finances/bin:$PATH"          # finances scripts
 export PATH="$HOME/Developer/romes-utils/bin:$PATH" # romes-utils scripts
 export PATH="$HOME/ghc-dev/ghc-utils:$PATH" # ghc-util scripts, e.g. ghc-docker-jobs.sh aarch64-linux-deb10-validate
 export PATH="$HOME/.opam/CP.2023.03+b1~8.17~2023.03+beta1/bin:$PATH"
@@ -39,6 +40,9 @@ export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export JAVA_HOME="$(/usr/libexec/java_home -v 17 2> /dev/null)"
 export PATH="$JAVA_HOME/bin:$PATH" # use java found in $JAVA_HOME first
 alias java-versions="/usr/libexec/java_home -V"
+
+# hledger
+export LEDGER_FILE="$HOME/control/finances/2024.journal"
 
 # $PS1
 function setps1() {
@@ -198,4 +202,4 @@ export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 source /Users/romes/.cob-cli/completion.sh
 # end cob-cli completion
 
-alias nixos='tart run nixos'
+alias nixos='tart run nixos & ssh romes@$(tart ip nixos)'

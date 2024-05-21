@@ -1,43 +1,35 @@
 [user]
 	name = Rodrigo Mesquita
 	email = rodrigo.m.mesquita@gmail.com
-	signingkey = ~/.ssh/id_ed25519.pub
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKdREVP76ISSwCnKzqMCeaMwgETLtnKqWPF7ORZSReZ
+
 [push]
 	default = current
+
 [pull]
 	default = origin
 	rebase = true
+
 [rebase]
     autosquash = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [log]
 	graph = true
+
 [alias]
     # Lookup for commit to fixup
     fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 
     submodules = submodule update --recursive --remote --merge
 
-    # Short theme
-    slog = log --abbrev-commit --decorate --format=format:'%C(auto)%h %s%d - %an%C(reset)'
-
-    # Dark theme
-    ## One line dense graph log
-    dlog = log --graph --abbrev-commit --decorate --all --format=format:'%C(blue)%h%C(reset) - %C(green)%ar%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
-
     ## Clean graph log
     vlog = log --graph --decorate --format=format:'%C(blue)%H%C(reset) - %C(green)%ar%C(reset) %C(auto)%d%C(reset)%n%n        %C(white)%s%C(reset)%n        %C(dim white)~ %an <%ae>%C(reset)%n'
-
-    # White theme
-    ## One line dense graph log for white theme
-    wdlog = log --graph --abbrev-commit --decorate --all --format=format:'%C(blue)%h%C(reset) - %C(green)%ar%C(reset) - %C(black)%s%C(reset) %C(dim black)- %an%C(reset)%C(auto)%d%C(reset)'
-
-    ## Clean graph log for white theme
-    wvlog = log --graph --decorate --format=format:'%C(blue)%H%C(reset) - %C(green)%ar%C(reset) %C(auto)%d%C(reset)%n%n        %C(black)%s%C(reset)%n        %C(dim black)~ %an <%ae>%C(reset)%n'
 
 [core]
 	excludesfile = /Users/romes/.gitignore_global
@@ -78,11 +70,15 @@
 
 [gpg]
 	format = ssh
+
 [commit]
 	gpgsign = true
+
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [maintenance]
 	repo = /Users/romes/hegg
 	repo = /Users/romes/ghc-dev/cabal
 	repo = /Users/romes/ghc-dev/ghc
-[gpg "ssh"]
-	allowedSignersFile = /Users/romes/.ssh/allowed_signers
+
