@@ -9,7 +9,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)" # Set PATH, MANPATH, etc., for Homebre
 BREW_PREFIX="$(brew --prefix)"
 
 # $PATH
-export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
+# export PATH="/opt/homebrew/opt/llvm@15/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" # Java
 export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH" # sphinx-docs
 export PATH="$HOME/.cabal/bin:/Users/romes/.ghcup/bin:$PATH" # Haskell Platform
@@ -34,6 +35,13 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 export LD_LIBRARY_PATH="-L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+# export LD=/opt/homebrew/opt/llvm@18/bin/ld64.lld
+
+# Linking + Merging Objs (GHC)
+# export LD=mold
+# export MergeObjsCmd=ld # ghc development specific option
+# export CONF_GCC_LINKER_OPTS_STAGE2=-fuse-ld=mold # ditto
+# export LDFLAGS="-fuse-ld=mold"
 
 # JAVA
 # TO RUN THE MINECRAFT MOD YOU NEED VERSION 17 for some reason
@@ -43,6 +51,9 @@ alias java-versions="/usr/libexec/java_home -V"
 
 # hledger
 export LEDGER_FILE="$HOME/control/finances/2024.journal"
+alias is="hledger is -X € -M --change Income Expenses -AT -2 -b'this year' --pretty"
+alias bs="hledger bs -X € -M --historical Assets Liabilities -3 -b'this year' --pretty"
+alias cf="hledger cf -X € -M -AT -3 -b'this year' --pretty"
 
 # $PS1
 function setps1() {
@@ -58,6 +69,8 @@ setps1
 alias mv='mv -i'
 alias cp='cp -i'
 
+# fzf shell integration
+eval "$(fzf --bash)"
 # vim + fzf
 alias vif='vim "$(fzf)"'
 # fzf <== ripgrep
@@ -108,9 +121,8 @@ alias japanese="sentences -o -c -t japanese"
 # - (outdated -- todo: redo)          -
 # +-----------------------------------*/
 
-# override ls with exa
-alias ls='exa'
-alias ll='exa --git --tree --level=2 -la --header --group'
+# override ls
+alias ls='lsd --icon=never'
 
 # always use translate-shell in interactive mode
 alias trans='trans -I'
@@ -142,9 +154,6 @@ alias ghci-core="ghci -ddump-simpl -dsuppress-idinfo \
 
 
 alias docker-ghc-linux-deb10="~/ghc-dev/ghc-utils/ghc-docker-jobs.sh aarch64-linux-deb10-validate"
-
-# hledger!
-alias mybs="hledger bs -V -X € --infer-market-prices --cost --pretty"
 
 
 if [[ $(uname) == "Darwin" ]]
@@ -183,7 +192,7 @@ HISTSIZE=5000
 HISTFILESIZE=5000
 
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 # Load vulkan SDK for local development
 . "$HOME/VulkanSDK/1.3.261.1/setup-env.sh" > /dev/null 2>&1
 
@@ -202,4 +211,16 @@ export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 source /Users/romes/.cob-cli/completion.sh
 # end cob-cli completion
 
-alias nixos='tart run nixos & ssh romes@$(tart ip nixos)'
+alias nixos='tart run --net-bridged=en0 nixos & ssh romes@$(tart ip nixos)'
+alias docker-nixos='docker run -it nixos/nix bash'
+alias docker-nixos-ship='docker run -v .:/$(basename $PWD) -it nixos/nix bash'
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
+then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+# Activate `direnv`: https://direnv.net/
+if command -v direnv >/dev/null; then
+    eval "$(direnv hook bash)"
+fi

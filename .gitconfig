@@ -47,7 +47,7 @@
 [delta]
     navigate = true
     side-by-side = false
-    light = true # set to true if you're in a terminal w/ a light background color
+    ; light = true # set to true if you're in a terminal w/ a light background color
 
 [interactive]
     diffFilter = delta --color-only
@@ -78,7 +78,7 @@
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [maintenance]
-	repo = /Users/romes/hegg
-	repo = /Users/romes/ghc-dev/cabal
-	repo = /Users/romes/ghc-dev/ghc
+	; repo = /Users/romes/hegg
+	; repo = /Users/romes/ghc-dev/cabal
+	; repo = /Users/romes/ghc-dev/ghc
 
