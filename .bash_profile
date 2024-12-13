@@ -215,12 +215,3 @@ alias nixos='tart run --net-bridged=en0 nixos & ssh romes@$(tart ip nixos)'
 alias docker-nixos='docker run -it nixos/nix bash'
 alias docker-nixos-ship='docker run -v .:/$(basename $PWD) -it nixos/nix bash'
 
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
-then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-
-# Activate `direnv`: https://direnv.net/
-if command -v direnv >/dev/null; then
-    eval "$(direnv hook bash)"
-fi
