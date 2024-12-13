@@ -214,4 +214,5 @@ source /Users/romes/.cob-cli/completion.sh
 alias nixos='tart run --net-bridged=en0 nixos & ssh romes@$(tart ip nixos)'
 alias docker-nixos='docker run -it nixos/nix bash'
 alias docker-nixos-ship='docker run -v .:/$(basename $PWD) -it nixos/nix bash'
+alias darwin-nix-switch='darwin-rebuild switch --flake $HOME/control/nix/darwin/'
 
